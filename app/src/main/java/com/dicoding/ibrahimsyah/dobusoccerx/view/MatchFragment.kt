@@ -25,8 +25,12 @@ class MatchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initData()
-        matchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        matchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
+        prevMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        prevMatchRecycler.setHasFixedSize(true)
+        prevMatchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
+        nextMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        nextMatchRecycler.setHasFixedSize(true)
+        nextMatchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
     }
 
     private fun initData() {

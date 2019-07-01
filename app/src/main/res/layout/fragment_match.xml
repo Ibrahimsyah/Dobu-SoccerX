@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".view.MatchFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
-    <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/matchRecycler"/>
+            tools:context=".view.MatchFragment" android:padding="16dp">
 
-</FrameLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prevMatch" android:id="@+id/PrevMatchTitle"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="@color/colorText"/>
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/prevMatchRecycler"
+                android:layout_below="@id/PrevMatchTitle" android:layout_marginTop="5dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/prevMatchRecycler"
+                android:layout_marginTop="10dp"
+                android:text="@string/nextMatch" android:id="@+id/nextMatchTitle"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:textColor="@color/colorText"/>
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nextMatchRecycler"
+                android:layout_below="@id/nextMatchTitle" android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
