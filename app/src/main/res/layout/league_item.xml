@@ -12,12 +12,13 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp" tools:srcCompat="@tools:sample/avatars"
-                android:id="@+id/leagueBadge" android:background="@color/colorPrimaryDark" android:padding="8dp"/>
+                android:id="@+id/leagueBadge" android:background="@color/colorPrimaryDark" android:padding="8dp"
+                android:contentDescription="@string/league_fan_art"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/leagueName"
-                android:textSize="20dp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:layout_below="@id/leagueBadge" android:textAlignment="center" android:paddingTop="16dp"
                 android:textColor="@color/colorPrimary" android:paddingBottom="16dp" android:paddingLeft="16dp"

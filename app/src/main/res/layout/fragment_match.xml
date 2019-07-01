@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:isScrollContainer="false"
         android:layout_width="match_parent" android:layout_height="match_parent">
     <RelativeLayout
             xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +14,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/prevMatch" android:id="@+id/PrevMatchTitle"
                 android:textStyle="bold"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textColor="@color/colorText"/>
         <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -26,7 +27,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/nextMatch" android:id="@+id/nextMatchTitle"
                 android:textStyle="bold"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textColor="@color/colorText"/>
         <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
