@@ -7,8 +7,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import com.dicoding.ibrahimsyah.dobusoccerx.R
-import com.dicoding.ibrahimsyah.dobusoccerx.SearchActivity
-import com.dicoding.ibrahimsyah.dobusoccerx.adapter.LeagueViewPagerAdapter
+import com.dicoding.ibrahimsyah.dobusoccerx.adapter.ViewPagerAdapter
+import com.dicoding.ibrahimsyah.dobusoccerx.model.League
 import kotlinx.android.synthetic.main.activity_league.*
 import org.jetbrains.anko.startActivity
 
@@ -27,7 +27,9 @@ class LeagueActivity : AppCompatActivity() {
             )
         }
 
-        val viewPagerAdapter = LeagueViewPagerAdapter(supportFragmentManager)
+        val leagueIntent = intent.getParcelableExtra<League>("league")
+
+        val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager, leagueIntent.id)
         viewPagerAdapter.addFragment(MatchFragment(), "MATCH")
         viewPagerAdapter.addFragment(StandingsFragment(), "STANDINGS")
         viewPagerAdapter.addFragment(TeamFragment(), "TEAMS")

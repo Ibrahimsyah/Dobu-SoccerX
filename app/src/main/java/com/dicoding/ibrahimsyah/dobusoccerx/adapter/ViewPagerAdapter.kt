@@ -1,14 +1,20 @@
 package com.dicoding.ibrahimsyah.dobusoccerx.adapter
 
+import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 
-class LeagueViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm){
+class ViewPagerAdapter(fm: FragmentManager, private val leagueId: String) : FragmentPagerAdapter(fm) {
     private val fragmentList : MutableList<Fragment> = mutableListOf()
     private val fragmentTitle : MutableList<String> = mutableListOf()
 
-    override fun getItem(p0: Int): Fragment = fragmentList[p0]
+    override fun getItem(p0: Int): Fragment {
+        val bundle = Bundle()
+        bundle.putString("leagueId", leagueId)
+        fragmentList[p0].arguments = bundle
+        return fragmentList[p0]
+    }
 
     override fun getCount(): Int = fragmentList.size
 

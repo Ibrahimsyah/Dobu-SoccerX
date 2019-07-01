@@ -1,9 +1,10 @@
-package com.dicoding.ibrahimsyah.dobusoccerx
+package com.dicoding.ibrahimsyah.dobusoccerx.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
 import android.view.MenuItem
+import com.dicoding.ibrahimsyah.dobusoccerx.R
 import kotlinx.android.synthetic.main.activity_search.*
 import org.jetbrains.anko.toast
 

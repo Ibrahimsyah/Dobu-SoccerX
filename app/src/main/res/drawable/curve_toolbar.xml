@@ -8,7 +8,7 @@
             android:left="-100dp"
             android:right="-100dp"
             android:top="-500dp">
-        <shape android:shape="oval">
+        <shape android:shape="rectangle">
             <solid android:color="@color/colorPrimary" />
         </shape>
     </item>

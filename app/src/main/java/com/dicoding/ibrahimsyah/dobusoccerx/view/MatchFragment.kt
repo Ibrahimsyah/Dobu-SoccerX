@@ -8,13 +8,41 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.dicoding.ibrahimsyah.dobusoccerx.FetchMatch
 import com.dicoding.ibrahimsyah.dobusoccerx.R
-import com.dicoding.ibrahimsyah.dobusoccerx.adapter.MainRecyclerAdapter
-import com.dicoding.ibrahimsyah.dobusoccerx.model.League
+import com.dicoding.ibrahimsyah.dobusoccerx.adapter.EventRecyclerAdapter
+import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
+import com.dicoding.ibrahimsyah.dobusoccerx.model.EventResponse
+import com.dicoding.ibrahimsyah.dobusoccerx.presenter.MatchPresenter
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_match.*
 
-class MatchFragment : Fragment() {
-    private val leagues: MutableList<League> = mutableListOf()
+class MatchFragment : Fragment(), FetchMatch {
+    override fun loadingStart() {}
+
+    override fun loadingStop() {}
+
+    override fun showData(prevMatch: EventResponse, nextMatch: EventResponse) {
+        prevMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        ViewCompat.setNestedScrollingEnabled(prevMatchRecycler, false)
+        prevMatchRecycler.adapter = context?.let {
+            prevMatch.events?.let { it1 ->
+                EventRecyclerAdapter(it, it1) {
+                    TODO("Intent To Event Detail")
+                }
+            }
+        }
+        nextMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        ViewCompat.setNestedScrollingEnabled(nextMatchRecycler, false)
+        nextMatchRecycler.adapter = context?.let {
+            nextMatch.events?.let { it1 ->
+                EventRecyclerAdapter(it, it1) {
+                    TODO("Intent To Event Detail")
+                }
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,25 +53,9 @@ class MatchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initData()
-        prevMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        ViewCompat.setNestedScrollingEnabled(prevMatchRecycler, false)
-        prevMatchRecycler.setHasFixedSize(true)
-        prevMatchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
-        nextMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        ViewCompat.setNestedScrollingEnabled(nextMatchRecycler, false)
-        nextMatchRecycler.setHasFixedSize(true)
-        nextMatchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
-    }
 
-    private fun initData() {
-        val name = resources.getStringArray(R.array.leagueName)
-        val id = resources.getStringArray(R.array.leagueId)
-        val badge = resources.getStringArray(R.array.leagueBadgeUrl)
-        for (i in name.indices) {
-            leagues.add(
-                League(id[i], name[i], badge[i])
-            )
-        }
+        val leagueId = arguments?.getString("leagueId")
+        val presenter = MatchPresenter(ApiRepository(), this, Gson())
+        presenter.getMatch(leagueId)
     }
 }
