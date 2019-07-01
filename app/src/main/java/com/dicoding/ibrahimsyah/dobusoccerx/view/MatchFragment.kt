@@ -3,6 +3,7 @@ package com.dicoding.ibrahimsyah.dobusoccerx.view
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -26,9 +27,11 @@ class MatchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initData()
         prevMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        ViewCompat.setNestedScrollingEnabled(prevMatchRecycler, false)
         prevMatchRecycler.setHasFixedSize(true)
         prevMatchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
         nextMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        ViewCompat.setNestedScrollingEnabled(nextMatchRecycler, false)
         nextMatchRecycler.setHasFixedSize(true)
         nextMatchRecycler.adapter = context?.let { MainRecyclerAdapter(it, leagues) {} }
     }
