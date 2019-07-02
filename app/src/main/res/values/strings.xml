@@ -45,4 +45,11 @@
     <string name="prevMatch">Previous Match</string>
     <string name="nextMatch">Next Match</string>
     <string name="league_fan_art"/>
+    <string name="zero">0</string>
+    <string name="noTeam">No Team</string>
+    <string name="teamName">Team</string>
+    <string name="teamPlay">Play</string>
+    <string name="teamWin">Win</string>
+    <string name="teamDraw">Draw</string>
+    <string name="teamLose">Lose</string>
 </resources>

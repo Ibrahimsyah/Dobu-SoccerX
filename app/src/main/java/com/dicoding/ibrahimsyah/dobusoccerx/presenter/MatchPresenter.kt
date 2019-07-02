@@ -17,9 +17,9 @@ class MatchPresenter(
         fetchMatch.loadingStart()
         doAsync {
             val prevMatch =
-                gson.fromJson(apiRepository.requestMatch(SportDBApi.getPrevMatch(leagueId)), EventResponse::class.java)
+                gson.fromJson(apiRepository.requestData(SportDBApi.getPrevMatch(leagueId)), EventResponse::class.java)
             val nextMatch =
-                gson.fromJson(apiRepository.requestMatch(SportDBApi.getNextMatch(leagueId)), EventResponse::class.java)
+                gson.fromJson(apiRepository.requestData(SportDBApi.getNextMatch(leagueId)), EventResponse::class.java)
             uiThread {
                 fetchMatch.showData(prevMatch, nextMatch)
                 fetchMatch.loadingStop()

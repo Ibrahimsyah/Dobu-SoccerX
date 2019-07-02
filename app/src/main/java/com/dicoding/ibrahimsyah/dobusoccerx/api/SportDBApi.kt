@@ -14,4 +14,6 @@ object SportDBApi {
     fun getSearchRes(query: String?): String = BuildConfig.BASE_URL + "searchevents.php?e=" + query
 
     fun getMatchDetail(matchId: String?): String = BuildConfig.BASE_URL + "lookupevent.php?id=" + matchId
+
+    fun getStandings(leagueId: String?): String = BuildConfig.BASE_URL + "lookuptable.php?l=" + leagueId
 }
