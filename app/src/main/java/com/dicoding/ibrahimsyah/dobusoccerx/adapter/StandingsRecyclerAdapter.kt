@@ -9,10 +9,10 @@ import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Table
 import kotlinx.android.synthetic.main.table_item.view.*
 
-class StandingsAdapter(
+class StandingsRecyclerAdapter(
     private val context: Context,
     private val tables: List<Table>
-) : RecyclerView.Adapter<StandingsAdapter.TableViewHolder>() {
+) : RecyclerView.Adapter<StandingsRecyclerAdapter.TableViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): TableViewHolder =
         TableViewHolder(LayoutInflater.from(p0.context).inflate(R.layout.table_item, p0, false))
 

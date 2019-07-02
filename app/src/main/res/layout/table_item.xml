@@ -2,7 +2,7 @@
 <android.support.v7.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="1dp" android:layout_marginTop="1dp">
 
     <LinearLayout
@@ -12,23 +12,24 @@
         <TextView
                 android:text="@string/noTeam"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/teamName" android:layout_weight="0.5"/>
+                android:layout_height="wrap_content" android:id="@+id/teamName" android:layout_weight="0.5"
+                android:textSize="16sp"/>
         <TextView
                 android:text="@string/zero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/teamPlay" android:layout_weight="1"
-                android:textAlignment="center"/>
+                android:textAlignment="center" android:textSize="16sp"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/teamWin" android:layout_weight="1"
-                android:text="@string/zero" android:textAlignment="center"/>
+                android:text="@string/zero" android:textAlignment="center" android:textSize="16sp"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/teamDraw" android:layout_weight="1"
-                android:text="@string/zero" android:textAlignment="center"/>
+                android:text="@string/zero" android:textAlignment="center" android:textSize="16sp"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/teamLose" android:layout_weight="1"
-                android:text="@string/zero" android:textAlignment="center"/>
+                android:text="@string/zero" android:textAlignment="center" android:textSize="16sp"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>

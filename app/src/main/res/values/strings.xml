@@ -48,8 +48,9 @@
     <string name="zero">0</string>
     <string name="noTeam">No Team</string>
     <string name="teamName">Team</string>
-    <string name="teamPlay">Play</string>
-    <string name="teamWin">Win</string>
-    <string name="teamDraw">Draw</string>
-    <string name="teamLose">Lose</string>
+    <string name="teamPlay">P</string>
+    <string name="teamWin">W</string>
+    <string name="teamDraw">D</string>
+    <string name="teamLose">L</string>
+    <string name="badge">badge</string>
 </resources>

@@ -18,9 +18,17 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_match.*
 
 class MatchFragment : Fragment(), FetchMatch {
-    override fun loadingStart() {}
+    override fun loadingStart() {
+        prevMatchTitle.visibility = View.GONE
+        nextMatchTitle.visibility = View.GONE
+        matchProgressBar.visibility = View.VISIBLE
+    }
 
-    override fun loadingStop() {}
+    override fun loadingStop() {
+        prevMatchTitle.visibility = View.VISIBLE
+        nextMatchTitle.visibility = View.VISIBLE
+        matchProgressBar.visibility = View.GONE
+    }
 
     override fun showData(prevMatch: EventResponse, nextMatch: EventResponse) {
         prevMatchRecycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

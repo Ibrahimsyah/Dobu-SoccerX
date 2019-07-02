@@ -33,9 +33,11 @@ class LeagueActivity : AppCompatActivity(), FetchLeague {
 
     override fun showData(leagueDetail: LeagueDetail?) {
         leagueDetail?.let {
-            Glide.with(applicationContext).load(leagueDetail.leagueBanner).override(150).into(league_fanart)
+            if (it.leagueBanner != null) Glide.with(applicationContext).load(it.leagueBanner).override(150).into(
+                league_fanart
+            )
             leagueDesc.text = it.leagueDescription
-            val url = "http:// ${it.leagueWebsite}"
+            val url = "http://${it.leagueWebsite}"
             btnWeb.onClick {
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse(url)
@@ -47,7 +49,9 @@ class LeagueActivity : AppCompatActivity(), FetchLeague {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
-        league_toolbar.title = "English Premiere League"
+        val leagueIntent = intent.getParcelableExtra<League>("league")
+
+        league_toolbar.title = leagueIntent.name
         setSupportActionBar(league_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -57,8 +61,6 @@ class LeagueActivity : AppCompatActivity(), FetchLeague {
             )
         }
 
-        val leagueIntent = intent.getParcelableExtra<League>("league")
-
         Glide.with(this).load(leagueIntent.badge).into(leagueLogo)
 
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager, leagueIntent.id)
@@ -66,6 +68,7 @@ class LeagueActivity : AppCompatActivity(), FetchLeague {
         viewPagerAdapter.addFragment(StandingsFragment(), "STANDINGS")
         viewPagerAdapter.addFragment(TeamFragment(), "TEAMS")
         league_viewpager.adapter = viewPagerAdapter
+        league_viewpager.offscreenPageLimit = 3
         league_tabs.setupWithViewPager(league_viewpager)
 
         val presenter = LeaguePresenter(this, ApiRepository(), Gson())

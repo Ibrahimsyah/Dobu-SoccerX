@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.dicoding.ibrahimsyah.dobusoccerx.FetchStandings
 import com.dicoding.ibrahimsyah.dobusoccerx.R
-import com.dicoding.ibrahimsyah.dobusoccerx.adapter.StandingsAdapter
+import com.dicoding.ibrahimsyah.dobusoccerx.adapter.StandingsRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Standings
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.StandingsPresenter
@@ -22,7 +22,7 @@ class StandingsFragment : Fragment(), FetchStandings {
         context?.let {
             standingsRecycler.layoutManager = LinearLayoutManager(it)
             standingsRecycler.adapter = table.table?.let { it1 ->
-                StandingsAdapter(it, it1)
+                StandingsRecyclerAdapter(it, it1)
             }
         }
     }

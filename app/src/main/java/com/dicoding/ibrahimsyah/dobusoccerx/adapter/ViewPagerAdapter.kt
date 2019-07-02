@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import android.view.View
 
 class ViewPagerAdapter(fm: FragmentManager, private val leagueId: String) : FragmentPagerAdapter(fm) {
     private val fragmentList : MutableList<Fragment> = mutableListOf()
@@ -25,4 +26,6 @@ class ViewPagerAdapter(fm: FragmentManager, private val leagueId: String) : Frag
         fragmentTitle.add(title)
     }
 
+    override fun destroyItem(container: View, position: Int, `object`: Any) {
+    }
 }
