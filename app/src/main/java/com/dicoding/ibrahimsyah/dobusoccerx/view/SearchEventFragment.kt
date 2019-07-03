@@ -15,7 +15,6 @@ import com.dicoding.ibrahimsyah.dobusoccerx.model.Team
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.SearchPresenter
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_fav_match.*
-import org.jetbrains.anko.support.v4.toast
 
 class SearchEventFragment : Fragment(), FetchSearch {
     companion object {
@@ -23,6 +22,7 @@ class SearchEventFragment : Fragment(), FetchSearch {
     }
 
     override fun showLoader() {
+        favMatchRecycler.adapter = null
         favMatchProgressBar.visibility = View.VISIBLE
         favMatchNoData.visibility = View.GONE
     }
@@ -37,7 +37,7 @@ class SearchEventFragment : Fragment(), FetchSearch {
             if (matches?.size != 0) {
                 favMatchRecycler.adapter = matches?.let { it1 ->
                     EventRecyclerAdapter(it, it1, true) {
-                        it.matchTitle?.let { it2 -> toast(it2) }
+                        TODO("Add Intent to Event Detail")
                     }
                 }
             } else {

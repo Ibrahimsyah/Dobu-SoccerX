@@ -7,7 +7,6 @@ import android.view.MenuItem
 import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.adapter.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_search.*
-import kotlinx.android.synthetic.main.fragment_fav_match.*
 
 class SearchActivity : AppCompatActivity() {
 
@@ -28,8 +27,8 @@ class SearchActivity : AppCompatActivity() {
 
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 p0?.let {
-                    favMatchRecycler.adapter = null
                     SearchEventFragment.presenter?.getSearchMatch(it)
+                    SearchTeamFragment.presenter?.getSearchTeam(it)
                 }
                 return false
             }

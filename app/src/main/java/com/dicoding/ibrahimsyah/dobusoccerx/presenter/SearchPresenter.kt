@@ -30,8 +30,8 @@ class SearchPresenter(
     }
 
     fun getSearchTeam(query: String) {
+        fetchSearch.showLoader()
         doAsync {
-            fetchSearch.showLoader()
             val result =
                 gson.fromJson(apiRepository.requestData(SportDBApi.getSearchTeam(query)), TeamResponse::class.java)
             uiThread {
