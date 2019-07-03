@@ -43,6 +43,8 @@ class EventRecyclerAdapter(
             val awayBadge =
                 JSONObject(URL(BuildConfig.BASE_URL + "lookupteam.php?id=" + event.awayId).readText()).getJSONArray("teams")
                     .getJSONObject(0).getString("strTeamBadge")
+            event.homeBadgeUrl = homeBadge
+            event.awayBadgeUrl = awayBadge
             uiThread {
                 Glide.with(context).load(homeBadge).override(80).diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(p0.itemView.badgeHomeTeam)

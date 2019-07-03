@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dicoding.ibrahimsyah.dobusoccerx.FetchMatch
+import com.dicoding.ibrahimsyah.dobusoccerx.MatchDetailActivity
 import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.adapter.EventRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
@@ -16,6 +17,7 @@ import com.dicoding.ibrahimsyah.dobusoccerx.model.EventResponse
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.MatchPresenter
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_match.*
+import org.jetbrains.anko.support.v4.startActivity
 
 class MatchFragment : Fragment(), FetchMatch {
     override fun loadingStart() {
@@ -36,7 +38,7 @@ class MatchFragment : Fragment(), FetchMatch {
         prevMatchRecycler.adapter = context?.let {
             prevMatch.events?.let { it1 ->
                 EventRecyclerAdapter(it, it1, false) {
-                    TODO("Intent To Event Detail")
+                    startActivity<MatchDetailActivity>("event" to it)
                 }
             }
         }
@@ -45,7 +47,7 @@ class MatchFragment : Fragment(), FetchMatch {
         nextMatchRecycler.adapter = context?.let {
             nextMatch.events?.let { it1 ->
                 EventRecyclerAdapter(it, it1, false) {
-                    TODO("Intent To Event Detail")
+                    startActivity<MatchDetailActivity>("event" to it)
                 }
             }
         }
