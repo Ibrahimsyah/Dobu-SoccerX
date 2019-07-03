@@ -20,4 +20,6 @@ object SportDBApi {
     fun getStandings(leagueId: String?): String = BuildConfig.BASE_URL + "lookuptable.php?l=" + leagueId
 
     fun getTeams(leagueId: String?): String = BuildConfig.BASE_URL + "lookup_all_teams.php?id=" + leagueId
+
+    fun getPlayers(teamId: String?): String = BuildConfig.BASE_URL + "lookup_all_players.php?id=" + teamId
 }
