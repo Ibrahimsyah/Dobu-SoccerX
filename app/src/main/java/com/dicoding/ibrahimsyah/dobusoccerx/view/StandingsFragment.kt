@@ -37,7 +37,7 @@ class StandingsFragment : Fragment(), FetchStandings {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val leagueId = arguments?.getString("leagueId")
+        val leagueId = arguments?.getString("anyString")
         val presenter = StandingsPresenter(this, ApiRepository(), Gson())
         leagueId?.let { presenter.getStandings(it) }
     }

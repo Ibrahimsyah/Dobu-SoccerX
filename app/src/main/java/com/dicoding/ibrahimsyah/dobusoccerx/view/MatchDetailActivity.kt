@@ -1,10 +1,11 @@
-package com.dicoding.ibrahimsyah.dobusoccerx
+package com.dicoding.ibrahimsyah.dobusoccerx.view
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.bumptech.glide.Glide
+import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Event
 import kotlinx.android.synthetic.main.activity_match_detail.*
 

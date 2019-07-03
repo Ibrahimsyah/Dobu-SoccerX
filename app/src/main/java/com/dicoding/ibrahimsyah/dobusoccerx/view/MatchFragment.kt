@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dicoding.ibrahimsyah.dobusoccerx.FetchMatch
-import com.dicoding.ibrahimsyah.dobusoccerx.MatchDetailActivity
 import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.adapter.EventRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
@@ -64,7 +63,7 @@ class MatchFragment : Fragment(), FetchMatch {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val leagueId = arguments?.getString("leagueId")
+        val leagueId = arguments?.getString("anyString")
         val presenter = MatchPresenter(ApiRepository(), this, Gson())
         presenter.getMatch(leagueId)
     }

@@ -15,7 +15,7 @@ import com.dicoding.ibrahimsyah.dobusoccerx.model.Team
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.TeamPresenter
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_team.*
-import org.jetbrains.anko.support.v4.toast
+import org.jetbrains.anko.support.v4.startActivity
 
 class TeamFragment : Fragment(), FetchTeam {
     override fun loadingStart() {
@@ -30,7 +30,7 @@ class TeamFragment : Fragment(), FetchTeam {
         context?.let {
             teamRecycler.layoutManager = LinearLayoutManager(it)
             teamRecycler.adapter = TeamRecyclerAdapter(it, teams) {
-                it.name?.let { it1 -> toast(it1) }
+                startActivity<TeamDetailActivity>("team" to it)
             }
         }
     }
@@ -45,7 +45,7 @@ class TeamFragment : Fragment(), FetchTeam {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val leagueId = arguments?.getString("leagueId")
+        val leagueId = arguments?.getString("anyString")
         val presenter = TeamPresenter(this, ApiRepository(), Gson())
         leagueId?.let { presenter.getTeams(it) }
     }
