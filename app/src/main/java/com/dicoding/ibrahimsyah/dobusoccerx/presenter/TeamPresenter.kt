@@ -14,8 +14,8 @@ class TeamPresenter(
     private val gson: Gson
 ) {
     fun getTeams(leagueId: String) {
+        fetchTeam.loadingStart()
         doAsync {
-            fetchTeam.loadingStart()
             val data = gson.fromJson(apiRepository.requestData(SportDBApi.getTeams(leagueId)), TeamResponse::class.java)
             uiThread {
                 fetchTeam.showData(data.teams)
