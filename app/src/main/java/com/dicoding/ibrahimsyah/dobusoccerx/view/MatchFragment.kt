@@ -35,7 +35,7 @@ class MatchFragment : Fragment(), FetchMatch {
         ViewCompat.setNestedScrollingEnabled(prevMatchRecycler, false)
         prevMatchRecycler.adapter = context?.let {
             prevMatch.events?.let { it1 ->
-                EventRecyclerAdapter(it, it1) {
+                EventRecyclerAdapter(it, it1, false) {
                     TODO("Intent To Event Detail")
                 }
             }
@@ -44,7 +44,7 @@ class MatchFragment : Fragment(), FetchMatch {
         ViewCompat.setNestedScrollingEnabled(nextMatchRecycler, false)
         nextMatchRecycler.adapter = context?.let {
             nextMatch.events?.let { it1 ->
-                EventRecyclerAdapter(it, it1) {
+                EventRecyclerAdapter(it, it1, false) {
                     TODO("Intent To Event Detail")
                 }
             }

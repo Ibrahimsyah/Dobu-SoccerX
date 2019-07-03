@@ -19,10 +19,13 @@ import java.net.URL
 class EventRecyclerAdapter(
     private val context: Context,
     private val events: List<Event>,
+    private val isSearch: Boolean,
     private val listener: (Event) -> Unit
 ) : RecyclerView.Adapter<EventRecyclerAdapter.MatchViewHolder>() {
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MatchViewHolder =
-        MatchViewHolder(LayoutInflater.from(p0.context).inflate(R.layout.event_item, p0, false))
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MatchViewHolder {
+        var layoutId: Int = if (isSearch) R.layout.search_event_item else R.layout.event_item
+        return MatchViewHolder(LayoutInflater.from(p0.context).inflate(layoutId, p0, false))
+    }
 
 
     override fun getItemCount(): Int = events.size

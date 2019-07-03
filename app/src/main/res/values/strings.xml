@@ -53,4 +53,5 @@
     <string name="teamDraw">D</string>
     <string name="teamLose">L</string>
     <string name="badge">badge</string>
+    <string name="noData">No Data</string>
 </resources>

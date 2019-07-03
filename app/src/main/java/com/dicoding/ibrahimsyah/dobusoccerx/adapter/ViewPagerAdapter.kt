@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.view.View
 
-class ViewPagerAdapter(fm: FragmentManager, private val leagueId: String) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fm: FragmentManager, private val leagueId: String?) : FragmentPagerAdapter(fm) {
     private val fragmentList : MutableList<Fragment> = mutableListOf()
     private val fragmentTitle : MutableList<String> = mutableListOf()
 
