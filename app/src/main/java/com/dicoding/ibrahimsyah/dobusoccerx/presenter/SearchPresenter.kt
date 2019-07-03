@@ -1,6 +1,5 @@
 package com.dicoding.ibrahimsyah.dobusoccerx.presenter
 
-import android.util.Log
 import com.dicoding.ibrahimsyah.dobusoccerx.FetchSearch
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.api.SportDBApi
@@ -24,7 +23,6 @@ class SearchPresenter(
                     SearchEventResponse::class.java
                 )
             uiThread {
-                Log.d("unduhan", "result: $result")
                 fetchSearch.showData(result.event, null)
                 fetchSearch.hideLoader()
             }
