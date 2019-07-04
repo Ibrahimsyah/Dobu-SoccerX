@@ -61,3 +61,4 @@ data class EventResponse(val events: List<Event>?) : Parcelable
 
 @Parcelize
 data class SearchEventResponse(val event: List<Event>?) : Parcelable
+
