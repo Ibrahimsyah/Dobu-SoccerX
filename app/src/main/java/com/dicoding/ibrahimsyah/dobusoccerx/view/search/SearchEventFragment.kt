@@ -13,8 +13,10 @@ import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Event
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Team
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.SearchPresenter
+import com.dicoding.ibrahimsyah.dobusoccerx.view.detail.MatchDetailActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_fav_match.*
+import org.jetbrains.anko.support.v4.startActivity
 
 class SearchEventFragment : Fragment(), FetchSearch {
     companion object {
@@ -37,7 +39,7 @@ class SearchEventFragment : Fragment(), FetchSearch {
             if (matches?.size != 0) {
                 favMatchRecycler.adapter = matches?.let { it1 ->
                     EventRecyclerAdapter(it, it1, true) {
-                        TODO("Add Intent to Event Detail")
+                        startActivity<MatchDetailActivity>("event" to it)
                     }
                 }
             } else {

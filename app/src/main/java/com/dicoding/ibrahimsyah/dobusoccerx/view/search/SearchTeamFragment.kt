@@ -13,8 +13,10 @@ import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Event
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Team
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.SearchPresenter
+import com.dicoding.ibrahimsyah.dobusoccerx.view.team.TeamDetailActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_fav_team.*
+import org.jetbrains.anko.support.v4.startActivity
 
 class SearchTeamFragment : Fragment(), FetchSearch {
     companion object {
@@ -36,7 +38,7 @@ class SearchTeamFragment : Fragment(), FetchSearch {
             favTeamRecycler.layoutManager = LinearLayoutManager(it)
             if (team != null) {
                 favTeamRecycler.adapter = TeamRecyclerAdapter(it, team) {
-                    TODO("Add Intent to Team Detail")
+                    startActivity<TeamDetailActivity>("team" to it)
                 }
             } else {
                 favTeamNoData.visibility = View.VISIBLE

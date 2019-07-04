@@ -43,12 +43,7 @@ class PlayerDetailActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            android.R.id.home -> super.onBackPressed()
-            R.id.menu_favourite -> {
-                TODO("Add to DB")
-            }
-        }
+        if (item?.itemId == android.R.id.home) super.onBackPressed()
         return super.onOptionsItemSelected(item)
     }
 }
