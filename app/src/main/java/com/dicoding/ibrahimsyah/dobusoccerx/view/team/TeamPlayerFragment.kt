@@ -1,4 +1,4 @@
-package com.dicoding.ibrahimsyah.dobusoccerx.view
+package com.dicoding.ibrahimsyah.dobusoccerx.view.team
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,8 +12,10 @@ import com.dicoding.ibrahimsyah.dobusoccerx.adapter.PlayerRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Player
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.PlayerPresenter
+import com.dicoding.ibrahimsyah.dobusoccerx.view.detail.PlayerDetailActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_team.*
+import org.jetbrains.anko.support.v4.startActivity
 
 class TeamPlayerFragment : Fragment(), FetchPlayer {
     override fun showLoader() {
@@ -27,7 +29,9 @@ class TeamPlayerFragment : Fragment(), FetchPlayer {
     override fun showData(players: List<Player>) {
         context?.let {
             teamRecycler.layoutManager = LinearLayoutManager(it)
-            teamRecycler.adapter = PlayerRecyclerAdapter(it, players) {}
+            teamRecycler.adapter = PlayerRecyclerAdapter(it, players) {
+                startActivity<PlayerDetailActivity>("player" to it)
+            }
         }
     }
 

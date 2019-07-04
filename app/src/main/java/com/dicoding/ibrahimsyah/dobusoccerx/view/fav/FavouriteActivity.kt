@@ -1,4 +1,4 @@
-package com.dicoding.ibrahimsyah.dobusoccerx.view
+package com.dicoding.ibrahimsyah.dobusoccerx.view.fav
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

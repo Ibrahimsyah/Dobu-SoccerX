@@ -55,4 +55,11 @@
     <string name="badge">badge</string>
     <string name="noData">No Data</string>
     <string name="noDescription">No Description</string>
+    <string name="nationality">Nationality:</string>
+    <string name="playerinfo">Player Info</string>
+    <string name="noContent">-</string>
+    <string name="position">Position:</string>
+    <string name="number">Number:</string>
+    <string name="wages">Wages:</string>
+    <string name="playerDescription">Player Description</string>
 </resources>

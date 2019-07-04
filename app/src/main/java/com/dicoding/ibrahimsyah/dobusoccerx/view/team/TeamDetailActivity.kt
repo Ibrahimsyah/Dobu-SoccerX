@@ -1,4 +1,4 @@
-package com.dicoding.ibrahimsyah.dobusoccerx.view
+package com.dicoding.ibrahimsyah.dobusoccerx.view.team
 
 import android.os.Build
 import android.os.Bundle

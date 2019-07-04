@@ -1,4 +1,4 @@
-package com.dicoding.ibrahimsyah.dobusoccerx.view
+package com.dicoding.ibrahimsyah.dobusoccerx.view.league
 
 import android.content.Intent
 import android.net.Uri
@@ -17,6 +17,7 @@ import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.League
 import com.dicoding.ibrahimsyah.dobusoccerx.model.LeagueDetail
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.LeaguePresenter
+import com.dicoding.ibrahimsyah.dobusoccerx.view.search.SearchActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_league.*
 import org.jetbrains.anko.sdk27.coroutines.onClick

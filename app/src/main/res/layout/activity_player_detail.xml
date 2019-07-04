@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
+
+    <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:titleEnabled="false">
+
+            <ImageView
+                    android:id="@+id/playerFanArt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/header"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_collapseMode="parallax" android:contentDescription="@string/league_fan_art"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.6"
+                    android:background="@android:color/black"
+                    android:fitsSystemWindows="true"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/header"
+                    android:paddingTop="20dp" android:paddingLeft="16dp"
+                    android:paddingRight="16dp" android:paddingBottom="16dp"
+                    android:layout_marginTop="?attr/actionBarSize">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp" android:src="@drawable/english_premier_league"
+                        android:id="@+id/playerLogo" android:contentDescription="@string/league_fan_art"/>
+            </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/player_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="24dp"
+                    app:layout_collapseMode="pin"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:fillViewport="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="vertical" android:padding="16dp">
+            <TextView
+                    android:text="@string/playerinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView9" android:textSize="18sp"
+                    android:textStyle="bold" android:layout_marginBottom="10dp"/>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_marginBottom="8dp">
+
+                <TextView
+                        android:text="@string/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/number" android:textStyle="bold"/>
+                <TextView
+                        android:text="@string/noContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/num"
+                        android:layout_toRightOf="@id/number" android:paddingStart="5dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_marginBottom="8dp">
+
+                <TextView
+                        android:text="@string/position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/position" android:textStyle="bold"/>
+                <TextView
+                        android:text="@string/noContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/pos"
+                        android:layout_toRightOf="@id/position" android:paddingStart="5dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_marginBottom="8dp">
+
+                <TextView
+                        android:text="@string/nationality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/nationality" android:textStyle="bold"/>
+                <TextView
+                        android:text="@string/noContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/nat"
+                        android:layout_toRightOf="@id/nationality" android:paddingStart="5dp" android:paddingEnd="5dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_marginBottom="8dp">
+
+                <TextView
+                        android:text="@string/wages"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/wages" android:textStyle="bold"/>
+                <TextView
+                        android:text="@string/noContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/wage"
+                        android:layout_toRightOf="@id/wages" android:paddingStart="5dp"/>
+            </RelativeLayout>
+            <TextView
+                    android:text="@string/playerDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView10" android:layout_marginTop="16dp"
+                    android:textStyle="bold" android:textSize="18sp" android:layout_marginBottom="10dp"/>
+            <TextView
+                    android:text="@string/noContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/playerDescription"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="@color/colorPrimary" android:visibility="gone"
+            android:id="@+id/playerProgressBar">
+
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar" android:layout_gravity="center"
+                android:progressTint="@color/colorWhite" android:indeterminateTint="@color/colorWhite"/>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

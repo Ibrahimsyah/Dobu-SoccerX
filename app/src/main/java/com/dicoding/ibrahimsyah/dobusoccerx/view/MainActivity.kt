@@ -8,6 +8,8 @@ import android.view.MenuItem
 import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.adapter.MainRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.model.League
+import com.dicoding.ibrahimsyah.dobusoccerx.view.fav.FavouriteActivity
+import com.dicoding.ibrahimsyah.dobusoccerx.view.league.LeagueActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 

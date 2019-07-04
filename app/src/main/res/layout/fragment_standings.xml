@@ -5,7 +5,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".view.StandingsFragment"
+        tools:context=".view.league.StandingsFragment"
         android:padding="16dp">
     <LinearLayout
             android:orientation="horizontal"

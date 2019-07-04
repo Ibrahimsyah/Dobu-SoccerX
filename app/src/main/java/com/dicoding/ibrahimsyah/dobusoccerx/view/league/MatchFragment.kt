@@ -1,4 +1,4 @@
-package com.dicoding.ibrahimsyah.dobusoccerx.view
+package com.dicoding.ibrahimsyah.dobusoccerx.view.league
 
 
 import android.os.Bundle
@@ -14,6 +14,7 @@ import com.dicoding.ibrahimsyah.dobusoccerx.adapter.EventRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.EventResponse
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.MatchPresenter
+import com.dicoding.ibrahimsyah.dobusoccerx.view.detail.MatchDetailActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_match.*
 import org.jetbrains.anko.support.v4.startActivity

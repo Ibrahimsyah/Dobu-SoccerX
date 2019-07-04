@@ -11,20 +11,22 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".view.TeamDetailActivity">
+        <activity android:name=".view.detail.PlayerDetailActivity">
+        </activity>
+        <activity android:name=".view.team.TeamDetailActivity">
         </activity>
         <activity
-                android:name=".view.MatchDetailActivity"
+                android:name=".view.detail.MatchDetailActivity"
                 android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".view.FavouriteActivity">
+        <activity android:name=".view.fav.FavouriteActivity">
         </activity>
         <activity
-                android:name=".view.SearchActivity"
+                android:name=".view.search.SearchActivity"
                 android:theme="@style/AppTheme">
         </activity>
         <activity
-                android:name=".view.LeagueActivity"
+                android:name=".view.league.LeagueActivity"
                 android:theme="@style/AppTheme1">
         </activity>
         <activity android:name=".view.MainActivity">

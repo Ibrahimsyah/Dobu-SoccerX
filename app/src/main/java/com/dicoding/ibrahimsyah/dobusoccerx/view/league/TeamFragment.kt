@@ -1,4 +1,4 @@
-package com.dicoding.ibrahimsyah.dobusoccerx.view
+package com.dicoding.ibrahimsyah.dobusoccerx.view.league
 
 
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.dicoding.ibrahimsyah.dobusoccerx.adapter.TeamRecyclerAdapter
 import com.dicoding.ibrahimsyah.dobusoccerx.api.ApiRepository
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Team
 import com.dicoding.ibrahimsyah.dobusoccerx.presenter.TeamPresenter
+import com.dicoding.ibrahimsyah.dobusoccerx.view.team.TeamDetailActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_team.*
 import org.jetbrains.anko.support.v4.startActivity
