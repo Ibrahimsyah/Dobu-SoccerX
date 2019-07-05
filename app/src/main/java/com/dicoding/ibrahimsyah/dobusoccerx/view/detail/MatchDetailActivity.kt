@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.dicoding.ibrahimsyah.dobusoccerx.R
-import com.dicoding.ibrahimsyah.dobusoccerx.db.matchDB
+import com.dicoding.ibrahimsyah.dobusoccerx.db.database
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Event
 import com.dicoding.ibrahimsyah.dobusoccerx.model.FavMatch
 import kotlinx.android.synthetic.main.activity_match_detail.*
@@ -29,7 +29,7 @@ class MatchDetailActivity : AppCompatActivity() {
         event = intent.getParcelableExtra("event")
         toolbarTitle.text = event.matchTitle
 
-        matchDB.use {
+        database.use {
             val response = select(FavMatch.TABLE_MATCH).whereArgs("${FavMatch.MATCH_ID}=${event.idMatch}")
             isFav = response.parseList(classParser<FavMatch>()).isNotEmpty()
         }
@@ -67,7 +67,7 @@ class MatchDetailActivity : AppCompatActivity() {
         if (item?.itemId == android.R.id.home) super.onBackPressed()
         if (item?.itemId == R.id.menu_favourite) {
             if (!isFav) {
-                matchDB.use {
+                database.use {
                     insert(
                         FavMatch.TABLE_MATCH,
                         FavMatch.MATCH_TITLE to event.matchTitle,
@@ -95,7 +95,7 @@ class MatchDetailActivity : AppCompatActivity() {
                 item.setIcon(R.drawable.ic_favorite_red)
                 toast("Added to Favourite")
             } else {
-                matchDB.use {
+                database.use {
                     delete(FavMatch.TABLE_MATCH, "${FavMatch.MATCH_ID}=${event.idMatch}")
                 }
                 item.setIcon(R.drawable.ic_favorite)

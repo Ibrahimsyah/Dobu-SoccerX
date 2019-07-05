@@ -9,7 +9,7 @@ import android.view.WindowManager
 import com.bumptech.glide.Glide
 import com.dicoding.ibrahimsyah.dobusoccerx.R
 import com.dicoding.ibrahimsyah.dobusoccerx.adapter.ViewPagerAdapter
-import com.dicoding.ibrahimsyah.dobusoccerx.db.teamDB
+import com.dicoding.ibrahimsyah.dobusoccerx.db.database
 import com.dicoding.ibrahimsyah.dobusoccerx.model.FavTeam
 import com.dicoding.ibrahimsyah.dobusoccerx.model.Team
 import kotlinx.android.synthetic.main.activity_team_detail.*
@@ -38,7 +38,7 @@ class TeamDetailActivity : AppCompatActivity() {
             )
         }
 
-        teamDB.use {
+        database.use {
             val response = select(FavTeam.TABLE_TEAM).whereArgs("${FavTeam.TEAM_ID}=${team.id}")
             isFav = response.parseList(classParser<FavTeam>()).isNotEmpty()
         }
@@ -63,7 +63,7 @@ class TeamDetailActivity : AppCompatActivity() {
         if (item?.itemId == android.R.id.home) super.onBackPressed()
         if (item?.itemId == R.id.menu_favourite) {
             if (!isFav) {
-                teamDB.use {
+                database.use {
                     insert(
                         FavTeam.TABLE_TEAM,
                         FavTeam.TEAM_ID to team.id,
@@ -76,7 +76,7 @@ class TeamDetailActivity : AppCompatActivity() {
                 item.setIcon(R.drawable.ic_favorite_red)
                 toast("Added to Favourite")
             } else {
-                teamDB.use {
+                database.use {
                     delete(FavTeam.TABLE_TEAM, "${FavTeam.TEAM_ID}=${team.id}")
                     item.setIcon(R.drawable.ic_favorite)
                     toast("Removed from Favourite")

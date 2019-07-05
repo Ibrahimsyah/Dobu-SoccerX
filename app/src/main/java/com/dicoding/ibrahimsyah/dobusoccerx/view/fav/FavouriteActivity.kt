@@ -25,4 +25,13 @@ class FavouriteActivity : AppCompatActivity() {
         if (item?.itemId == android.R.id.home) super.onBackPressed()
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onResume() {
+        super.onResume()
+        val favVP = ViewPagerAdapter(supportFragmentManager, "0")
+        favVP.addFragment(FavEventFragment(), "MATCH")
+        favVP.addFragment(FavTeamFragment(), "TEAM")
+        favViewPager.adapter = favVP
+        favTabLayout.setupWithViewPager(favViewPager)
+    }
 }
