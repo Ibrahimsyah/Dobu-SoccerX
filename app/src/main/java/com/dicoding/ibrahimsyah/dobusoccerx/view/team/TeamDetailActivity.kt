@@ -26,7 +26,7 @@ class TeamDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_detail)
-        team = intent.getParcelableExtra<Team>("team")
+        team = intent.getParcelableExtra("team")
         team_toolbar.title = team.name
         setSupportActionBar(team_toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
